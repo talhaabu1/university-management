@@ -43,7 +43,79 @@ export const { POST } = serve<InitialData>(async (context) => {
     await sendEmail({
       email,
       subject: 'Welcome to the platform',
-      message: `Hi ${fullName}, welcome to our platform!`,
+      message: `
+        <html>
+          <head>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+              }
+              .email-container {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+              }
+              .header {
+                background-color: #4CAF50;
+                color: #ffffff;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 24px;
+                font-weight: bold;
+              }
+              .content {
+                padding: 30px;
+                text-align: center;
+                color: #333333;
+                font-size: 16px;
+              }
+              .content h2 {
+                color: #4CAF50;
+              }
+              .cta-button {
+                background-color: #4CAF50;
+                color: #ffffff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 20px;
+                display: inline-block;
+              }
+              .footer {
+                background-color: #f4f4f4;
+                text-align: center;
+                padding: 15px;
+                font-size: 12px;
+                color: #888888;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="email-container">
+              <div class="header">
+                Welcome to the Platform!
+              </div>
+              <div class="content">
+                <h2>Hi ${fullName},</h2>
+                <p>Welcome to our platform! We're excited to have you on board.</p>
+                <a href="#" class="cta-button">Get Started</a>
+              </div>
+              <div class="footer">
+                <p>&copy; 2025 Your Company. All rights reserved.</p>
+                <p>If you have any questions, feel free to contact us.</p>
+              </div>
+            </div>
+          </body>
+        </html>
+      `,
     });
   });
 
