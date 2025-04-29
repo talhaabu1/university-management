@@ -106,7 +106,7 @@ export const { POST } = serve<InitialData>(async (context) => {
               <div class="content">
                 <h2>Hi ${fullName},</h2>
                 <p>Welcome to our platform! We're excited to have you on board.</p>
-                <a href="#" class="cta-button">Get Started</a>
+                <a href="https://university1977.vercel.app" class="cta-button">Get Started</a>
               </div>
               <div class="footer">
                 <p>&copy; 2025 Your Company. All rights reserved.</p>
