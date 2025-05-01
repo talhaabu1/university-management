@@ -1,4 +1,6 @@
 {
   "css.lint.unknownAtRules": "ignore",
-  "cSpell.words": ["imagekit", "qstash"]
+  "cSpell.words": ["imagekit", "qstash"],
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false
 }

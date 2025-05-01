@@ -131,7 +131,40 @@ export const { POST } = serve<InitialData>(async (context) => {
         await sendEmail({
           email,
           subject: 'Are you still there?',
-          message: `Hi ${fullName}, we miss you!`,
+          message: `
+  <div style="font-family: Arial, sans-serif; background-color: #f9fafb; padding: 30px;">
+    <div style="max-width: 600px; margin: auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      
+      <img src="https://i.imgur.com/Um5JZ2b.png" alt="We miss you" style="width: 100%; height: auto;" />
+
+      <div style="background-color: #2563eb; color: white; padding: 20px 30px;">
+        <h1 style="margin: 0; font-size: 24px;">We Miss You, ${fullName}!</h1>
+      </div>
+
+      <div style="padding: 30px;">
+        <p style="font-size: 16px; color: #333;">
+          It's been a while since we last saw you, and we just wanted to check in.
+        </p>
+        <p style="font-size: 16px; color: #333;">
+          There’s a lot waiting for you on our platform — new features, updates, and a community that’s eager to have you back!
+        </p>
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="https://university1977.vercel.app" 
+             style="background-color: #2563eb; color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold;">
+            Come Back Now
+          </a>
+        </div>
+        <p style="font-size: 14px; color: #6b7280;">
+          If you have any questions or need help, feel free to reply to this email.
+        </p>
+      </div>
+
+      <div style="background-color: #f3f4f6; padding: 20px 30px; text-align: center; font-size: 12px; color: #9ca3af;">
+        © ${new Date().getFullYear()} OP TALHA | All rights reserved.
+      </div>
+    </div>
+  </div>
+`,
         });
       });
     } else if (state === 'active') {
@@ -139,7 +172,42 @@ export const { POST } = serve<InitialData>(async (context) => {
         await sendEmail({
           email,
           subject: 'Welcome back to the platform',
-          message: `Hi ${fullName}, welcome back to our platform!`,
+          message: `
+  <div style="font-family: Arial, sans-serif; background-color: #f3f4f6; padding: 30px;">
+    <div style="max-width: 600px; margin: auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.08);">
+      
+      <img src="https://i.imgur.com/gP5hOaA.png" alt="Welcome back!" style="width: 100%; height: auto;" />
+
+      <div style="background-color: #10b981; color: white; padding: 20px 30px;">
+        <h1 style="margin: 0; font-size: 24px;">Welcome Back, ${fullName}!</h1>
+      </div>
+
+      <div style="padding: 30px;">
+        <p style="font-size: 16px; color: #111827;">
+          We're thrilled to see you again. You’ve been missed!
+        </p>
+        <p style="font-size: 16px; color: #374151;">
+          We’ve been working hard to improve your experience. New features, smarter tools, and more community fun are waiting for you.
+        </p>
+
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="https://university1977.vercel.app" 
+             style="background-color: #10b981; color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold;">
+            Explore What's New
+          </a>
+        </div>
+
+        <p style="font-size: 14px; color: #6b7280;">
+          Need help? Just reply to this email — we're always here for you.
+        </p>
+      </div>
+
+      <div style="background-color: #f9fafb; padding: 20px 30px; text-align: center; font-size: 12px; color: #9ca3af;">
+        © ${new Date().getFullYear()} OP TALHA | All rights reserved.
+      </div>
+    </div>
+  </div>
+`,
         });
       });
     }
