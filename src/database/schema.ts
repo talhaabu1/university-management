@@ -34,3 +34,20 @@ export const users = pgTable('users', {
   lastActivityDate: date('last_activity_date').defaultNow(),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
 });
+
+export const books = pgTable('books', {
+  id: uuid('id').notNull().defaultRandom().primaryKey().unique(),
+  title: text('title').notNull(),
+  description: text('description').notNull(),
+  author: text('author').notNull(),
+  genre: text('genre').notNull(),
+  rating: integer('rating').notNull(),
+  totalCopies: integer('total_copies').notNull().default(1),
+  coverUrl: text('cover_url').notNull(),
+  coverColor: text('cover_color').notNull(),
+  videoUrl: text('video_url').notNull(),
+  summary: text('summary').notNull(),
+  availableCopies: integer('available_copies').notNull().default(0),
+  status: STATUS_ENUM('status').default('PENDING'),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
+});
